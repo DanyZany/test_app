@@ -1,0 +1,23 @@
+<%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+  <%= f.text_field :content, placeholder: "Nuovo compito" %>
+  <%= f.submit :id=> 'btns',  disabled:true %>
+<% end %>
+
+
+<script type="text/javascript">
+
+
+	$(document).ready(function () {
+	    $('#todo_item_content').on('keyup', function() {
+	        if ($('#todo_item_content').val() == '')
+	    	{
+	        	$('#btns').attr('disabled', true);
+	        }
+	        else
+	        {
+	        	$('#btns').attr('disabled', false);
+	        }
+
+	    });
+	});
+</script>
