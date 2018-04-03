@@ -21,10 +21,20 @@ class TodoItemsController < ApplicationController
 
 def complete
 		@todo_item.update_attribute(:completed_at, Time.now) 
-		redirect_to @todo_list, notice: "Compito svolto "
+		redirect_to @todo_list, notice: "Compito svolto"
 
 	end
 
+# 
+# 
+
+
+def incomplete
+		@todo_item.update_attribute(:completed_at, '')
+		#@todo_item.update_attribute(:incompleted_at, Time.now) 
+		redirect_to @todo_list, notice: "Non completato"
+
+	end
 
 
 
